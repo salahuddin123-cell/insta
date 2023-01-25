@@ -24,14 +24,14 @@ const chatSchema=require('./model/chatschema')
 const { Server } = require("socket.io");
 
 const io = new Server(server
-//     ,{
-//     cors:{
-//         origin: "http://localhost:3000",
-//         optionsSuccessStatus: 200,
-//         credentials: true,
-//         methods: ["GET", "POST"],
-//     }
-// }
+    ,{
+    cors:{
+        origin: "http://localhost:3000",
+        optionsSuccessStatus: 200,
+        credentials: true,
+        methods: ["GET", "POST"],
+    }
+}
     
     );
 
