@@ -123,7 +123,7 @@ router.post('/register/new', (req, res) => {
 
     dp.mv(__dirname+'/uploads/' + dp.name, (err) => {
         if (err) {
-            res.json({ "status": err })
+            res.json({ "status": err,"log":__dirname })
         } else {
             var insobj = {
 
