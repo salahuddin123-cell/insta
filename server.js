@@ -119,11 +119,9 @@ router.delete("/post/:id",
 router.post('/register/new', (req, res) => {
 
     var dp = req.files.Dp;
-    var token = jwt.sign({ id: req.body._id },"salahuddinsk", {
-        expiresIn: 86400 // expires in 24 hours
-      });
+   
 
-    dp.mv('./public/images/' + dp.name, (err) => {
+    dp.mv('./uploads/' + dp.name, (err) => {
         if (err) {
             res.json({ "status": err })
         } else {
