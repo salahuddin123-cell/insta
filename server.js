@@ -121,7 +121,7 @@ router.post('/register/new', (req, res) => {
     var dp = req.files.Dp;
    
 
-    dp.mv('./uploads/' + dp.name, (err) => {
+    dp.mv(__dirname+'/uploads/' + dp.name, (err) => {
         if (err) {
             res.json({ "status": err })
         } else {
