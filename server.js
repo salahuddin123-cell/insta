@@ -125,7 +125,7 @@ router.post('/register/new', (req, res) => {
 
     dp.mv('../client/public/img/' + dp.name, (err) => {
         if (err) {
-            res.json({ "status": "File not uploaded" })
+            res.json({ "status": err })
         } else {
             var insobj = {
 
