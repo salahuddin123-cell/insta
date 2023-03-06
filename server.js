@@ -123,7 +123,7 @@ router.post('/register/new', (req, res) => {
         expiresIn: 86400 // expires in 24 hours
       });
 
-    dp.mv('../client/public/img/' + dp.name, (err) => {
+    dp.mv('./images/' + dp.name, (err) => {
         if (err) {
             res.json({ "status": err })
         } else {
