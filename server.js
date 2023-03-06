@@ -8,6 +8,7 @@ const bcrypt=require('bcryptjs')
 const jwt = require('jsonwebtoken');
 const server = http.createServer(app);
 const socketIO = require('socket.io');
+var path = require('path');
 
 const port=process.env.PORT||8000
 //const io = socketIO(server);
@@ -120,8 +121,8 @@ router.post('/register/new', (req, res) => {
 
     var dp = req.files.Dp;
    
-
-    dp.mv(__dirname+'/uploads/' + dp.name, (err) => {
+    let dest=path.join(__dirname,"uploads")
+    dp.mv(dest + dp.name, (err) => {
         if (err) {
             res.json({ "status": err,"log":__dirname })
         } else {
